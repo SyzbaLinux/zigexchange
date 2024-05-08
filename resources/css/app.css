@@ -1,0 +1,40 @@
+@import "normalize.css";
+@import "bootstrap.min.css";
+@import "responsive.css";
+@import "style.css";
+
+@import "vue-select/dist/vue-select.css";
+
+.vs__dropdown-toggle{
+    border: none !important;
+    border-bottom: 1px solid white !important;
+    border-radius: unset !important;
+    min-width: 60px !important;
+}
+
+.border-bottom-white{
+    border-bottom: 1px solid white !important;
+    margin-bottom: 4px;
+}
+
+.form-control{
+    border-radius: unset !important;
+}
+
+.vs__dropdown-toggle .vs__selected {
+    color: #ffffff !important;
+}
+
+.language-select{
+    min-width: 40% !important;
+}
+
+
+.glass {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    box-shadow: 8px 10px 30px rgba(0, 100, 0, 0.1) !important;
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.64) !important;
+}
