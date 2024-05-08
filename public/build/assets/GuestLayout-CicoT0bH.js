@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,f as s,b as a,m as r}from"./app-DWMzocVw.js";const n={name:"GuestLayout"};function c(e,l,u,p,d,f){return t(),s("div",null,[a("div",null,[r(e.$slots,"default")])])}const i=o(n,[["render",c]]);export{i as G};
