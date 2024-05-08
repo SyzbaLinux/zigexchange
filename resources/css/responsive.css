@@ -320,9 +320,15 @@
 }
 
 @media (max-width: 991px) {
+
+    .banner .hero-area {
+        margin-top: 90px !important;
+    }
+
+
 	h1.head {
-		font-size: 45px;
-		line-height: 55px;
+		font-size: 45px !important;
+		line-height: 55px !important;
 	}
 	h2.title {
 		font-size: 38px;
@@ -334,7 +340,7 @@
 		left: 0;
 		width: 100%;
 		box-shadow: 0px 5px 89.61px 13.39px rgb(23 29 113 / 5%);
-		background: -webkit-linear-gradient(top, rgba(153, 88, 255, 1) 100%, rgba(172, 97, 255, 1) 100%);
+		background:  darkgreen;
 		z-index: 99999;
 		padding: 10px 0 10px;
 	}
