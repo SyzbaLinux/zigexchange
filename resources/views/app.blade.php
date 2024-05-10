@@ -12,5 +12,14 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+
+        <script>
+            // window.addEventListener("load", function() {
+            //     /* Preloader */
+            //     var preloader = document.querySelector("#preloader");
+            //     preloader.css('dsisplay','none');
+            // });
+
+        </script>
     </body>
 </html>

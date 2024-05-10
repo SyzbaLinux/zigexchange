@@ -6,6 +6,7 @@ use App\Models\Currency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Inertia\Inertia;
+use Squire\Models\Country;
 
 class PagesController extends Controller
 {
@@ -40,5 +41,15 @@ class PagesController extends Controller
     public function about()
     {
         return Inertia::render('Welcome');
+    }
+
+    public function designTwo()
+    {
+
+       // return Country::with('currency')->get();
+
+        return Inertia::render('DesignTwo',[
+            'currencies'        => Country::get(),
+        ]);
     }
 }

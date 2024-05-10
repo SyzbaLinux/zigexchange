@@ -1,5 +1,8 @@
 import './bootstrap';
 import '../css/app.css';
+import vuetify from './plugins/vuetify.js'
+import "@phosphor-icons/web/duotone";
+import "@phosphor-icons/web/regular";
 
 import { createApp, h } from 'vue';
 import {createInertiaApp, Link} from '@inertiajs/vue3';
@@ -16,7 +19,8 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .component("v-select", VueSelect)
+            .use(vuetify)
+            .component("vv-select", VueSelect)
             .component("InertiaLink", Link)
             .mount(el);
     },

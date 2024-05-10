@@ -5,8 +5,9 @@
         <div class="mein-menu">
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container">
-                    <a class="navbar-brand" :href="route('welcome')">
-                        <img src="/assets/img/logo2.png" width="200"   class="logo" alt="Zig.Exchange">
+                    <a class="navbar-brand text-white" :href="route('welcome')">
+                        ZE
+<!--                        <img src="/assets/img/logo2.png" width="200"   class="logo" alt="Zig.Exchange">-->
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -19,7 +20,7 @@
                                 <InertiaLink class="nav-link" aria-current="page" :href="route('welcome')">Home</InertiaLink>
                             </li>
                             <li class="nav-item">
-                                <InertiaLink class="nav-link" href="#">About Us</InertiaLink>
+                                <InertiaLink class="nav-link" :href="route('DesignTwo')">Design Two</InertiaLink>
                             </li>
                             <li class="nav-item">
                                 <InertiaLink class="nav-link" href="#">Contact Us</InertiaLink>
@@ -64,7 +65,7 @@
                                     </div>
 
                                 <div class="language-select">
-                                    <v-select
+                                    <vv-select
                                         v-model="form.base_currency"
                                         class="select-bar"
                                         :options="$page.props.currencies"
@@ -91,7 +92,7 @@
                                 </div>
 
                                 <div  class="language-select">
-                                    <v-select
+                                    <vv-select
                                         v-model="form.exchange_currency"
                                         class="select-bar"
                                         :options="$page.props.currencies"

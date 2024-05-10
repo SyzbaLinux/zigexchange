@@ -5,6 +5,11 @@
 
 @import "vue-select/dist/vue-select.css";
 
+.nav-link{
+    text-decoration: none;
+    color: unset;
+}
+
 .vs__dropdown-toggle{
     border: none !important;
     border-bottom: 1px solid white !important;
@@ -37,4 +42,24 @@
     backdrop-filter: blur(0px) !important;
     -webkit-backdrop-filter: blur(0px) !important;
     border: 1px solid rgba(255, 255, 255, 0.64) !important;
+}
+
+.glass-shadow{
+    box-shadow: 8px 10px 30px rgba(0, 100, 0, 0.1) !important;
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
+}
+
+.glass-shadow-lg{
+    box-shadow: 8px 10px 30px rgba(23, 102, 175, 0.5) !important;
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
+}
+
+.v-tab.v-tab.v-btn{
+    text-transform: unset !important;
+}
+
+._12px{
+    font-size: 12px !important;
 }
