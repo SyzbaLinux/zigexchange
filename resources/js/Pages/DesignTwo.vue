@@ -229,11 +229,11 @@ export default {
         .main-hero p{
             font-size: 16px !important;
             text-align: center !important;
+            height: 200px !important;
         }
 
         .welcome-div{
-            min-height: 250px !important;
-            margin-top: -30% !important;
+            margin-top: -50% !important;
         }
     }
 </style>
