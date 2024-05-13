@@ -6,9 +6,11 @@ use App\Filament\Resources\CurrencyResource\Pages;
 use App\Filament\Resources\CurrencyResource\RelationManagers;
 use App\Models\Currency;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +25,9 @@ class CurrencyResource extends Resource
     {
         return $form
             ->schema([
-                //
+                 TextInput::make('code'),
+                 TextInput::make('name'),
+                 TextInput::make('flag'),
             ]);
     }
 
@@ -31,19 +35,14 @@ class CurrencyResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
-            ->filters([
-                //
+                TextColumn::make('code')->label('Code')->searchable()->sortable(),
+                TextColumn::make('name')->label('Currency Name')->searchable()->sortable(),
+                TextColumn::make('flag')->label('Country Flag')->sortable(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+                Tables\Actions\EditAction::make()->button(),
+                Tables\Actions\DeleteAction::make()->button(),
+            ]) ;
     }
 
     public static function getRelations(): array

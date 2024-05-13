@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('currencies', function (Blueprint $table) {
+        Schema::create('gold_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
-            $table->string('name');
-            $table->string('country');
-            $table->string('flag')->nullable();
+            $table->decimal('price');
+            $table->boolean('is_official')->default(false);
+            $table->string('source')->nullable();
+            $table->string('source_url')->nullable();
+            $table->dateTime('date_fetched')->nullable();
             $table->timestamps();
         });
     }
@@ -24,9 +25,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-
     public function down(): void
     {
-        Schema::dropIfExists('currencies');
+        Schema::dropIfExists('gold_prices');
     }
 };

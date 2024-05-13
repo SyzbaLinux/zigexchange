@@ -20,7 +20,6 @@ Route::get('/', [\App\Http\Controllers\PagesController::class,'welcome'])->name(
 Route::get('/contact', [\App\Http\Controllers\PagesController::class,'contact'])->name('contact');
 Route::get('/faq', [\App\Http\Controllers\PagesController::class,'faq'])->name('faq');
 Route::get('/about', [\App\Http\Controllers\PagesController::class,'about'])->name('about');
-Route::get('/DesignTwo', [\App\Http\Controllers\PagesController::class,'DesignTwo'])->name('DesignTwo');
 
 
 
