@@ -4,6 +4,10 @@
 /*@import "style.css";*/
 /* */
 
+.cursor-hand{
+    cursor:pointer;
+}
+
 .nav-link{
     text-decoration: none;
     color: unset;

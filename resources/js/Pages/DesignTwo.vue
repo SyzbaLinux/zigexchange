@@ -79,17 +79,41 @@
 
                                 <v-row class="mt-5">
                                     <v-col cols="12" md="4">
-                                        <v-text-field
-                                            label="Amount"
-                                            v-model="form.zigamount"
-                                            @input="zigExchanges"
-                                        />
+                                       <div v-if="exchange" class="text-center">
+                                           <v-text-field
+                                               label="ZIG Amount"
+                                               v-model="form.zigamount"
+                                               @input="zigExchanges"
+                                               hide-details
+                                           />
 
-                                        <v-text-field
-                                            label="Exchange Amount"
-                                            v-model="form.zigexchange_amount"
-                                            @input="zigExchangesFrom"
-                                        />
+                                           <v-avatar size="50" class="cursor-hand my-5 elevation-5" color="primary" @click="exchange = !exchange">
+                                                    <img height="35" src="/imgs/marketeq--exchange.svg"/>
+                                           </v-avatar>
+
+                                           <v-text-field
+                                               label="Exchange Amount"
+                                               v-model="form.zigexchange_amount"
+                                               @input="zigExchangesFrom"
+                                           />
+                                       </div>
+
+                                        <div v-else  class="text-center">
+                                            <v-text-field
+                                                label="Exchange Amount"
+                                                v-model="form.zigexchange_amount"
+                                                @input="zigExchangesFrom"
+                                                hide-details
+                                            />
+                                            <v-avatar size="50" class="cursor-hand my-5 elevation-5" color="primary" @click="exchange = !exchange">
+                                                <img height="35" src="/imgs/marketeq--exchange.svg"/>
+                                            </v-avatar>
+                                            <v-text-field
+                                                label="ZIG Amount"
+                                                v-model="form.zigamount"
+                                                @input="zigExchanges"
+                                            />
+                                        </div>
                                     </v-col>
                                     <v-col cols="12" md="4">
                                         <v-select
@@ -100,6 +124,15 @@
                                             chips
                                             v-model="form.zigbase_currency"
                                         >
+                                            <template v-slot:chip="{ props, item }">
+                                                <v-chip
+
+                                                    v-bind="props"
+                                                    :prepend-avatar="`https://flagcdn.com/zw.svg`"
+                                                >
+                                                     ZIG | Zimbabwe Gold
+                                                </v-chip>
+                                            </template>
                                         </v-select>
                                     </v-col>
 
@@ -133,6 +166,24 @@
                                         <p class="text-h5"> {{ form.zigamount }}  Zimbabwe Gold =</p>
                                         <p  class="text-h4 my-3">{{  form.zigexchange_amount }} {{ form.zigexchange_currency }}</p>
                                     </v-card-text>
+
+                                    <v-row class="d-flex align-center">
+
+                                        <v-col cols="12" md="5">
+                                            <v-alert type="warning" color="yellow-darken-4">
+                                                <a style="color: white" target="_blank" :href="$page.props.officialGoldPrices.source_url">
+                                                    Gold Price Obtrained from {{ $page.props.officialGoldPrices.source }}
+                                                </a>
+                                            </v-alert>
+                                        </v-col>
+
+                                        <v-col>
+                                            <p>
+                                                <span class="text-primary">Gold Price</span> Last updated
+                                                {{ $page.props.officialGoldPrices.date_fetched  }}
+                                            </p>
+                                        </v-col>
+                                    </v-row>
                                 </v-card>
                             </v-tabs-window-item>
 
@@ -170,12 +221,6 @@
                                             </template>
                                         </v-autocomplete>
                                     </v-col>
-
-<!--                                     <v-col cols="12" md="1" class="text-center">-->
-<!--                                         <v-avatar color="primary" class="pa-2" size="50">-->
-<!--                                             <img width="60" src="/imgs/marketeq&#45;&#45;exchange.svg" alt=""/>-->
-<!--                                         </v-avatar>-->
-<!--                                     </v-col>-->
 
                                      <v-col cols="12" md="4">
                                          <v-autocomplete
@@ -244,6 +289,7 @@ export default {
     data(){
         return{
             tab:'two',
+            exchange:true,
             base_currency:null,
             exchange_currency:null,
 
